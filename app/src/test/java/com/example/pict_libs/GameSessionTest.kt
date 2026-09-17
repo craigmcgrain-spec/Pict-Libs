@@ -17,11 +17,11 @@ class GameSessionTest {
                 repeat(6) { round ->
                     assertFalse(game.isComplete)
                     assertEquals(round, game.picks.size)
-                    assertEquals(template.slots[round], game.currentSlot)
+                    assertEquals(template.allSlots[round], game.currentSlot)
                     assertEquals(12, game.pool.size)
                     assertEquals(12, game.pool.map { it.text }.distinct().size)
-                    assertTrue(game.pool.all { it.subcategory == template.slots[round] })
-                    assertTrue(game.pool.all { it.category == template.slots[round].category })
+                    assertTrue(game.pool.all { it.subcategory == template.allSlots[round] })
+                    assertTrue(game.pool.all { it.category == template.allSlots[round].category })
                     assertTrue(game.pool.all { it.emoji.isNotBlank() })
                     game.choose(game.pool[seed % 12])
                 }
@@ -68,13 +68,13 @@ class GameSessionTest {
         assertEquals(game.pool, restored.pool)
         restored.undo()
         assertEquals(game.picks.take(2), restored.picks)
-        assertEquals(game.template.slots[2], restored.currentSlot)
+        assertEquals(game.template.allSlots[2], restored.currentSlot)
         repeat(4) { restored.choose(restored.pool.first()) }
         val completed = GameSession(restored.template, picks = restored.picks, pool = restored.pool)
         assertEquals(restored.story(), completed.story())
         completed.undo()
         assertEquals(restored.picks.take(5), completed.picks)
-        assertEquals(restored.template.slots.last(), completed.currentSlot)
+        assertEquals(restored.template.allSlots.last(), completed.currentSlot)
         assertEquals(12, completed.pool.size)
     }
 }

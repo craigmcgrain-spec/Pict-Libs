@@ -10,14 +10,14 @@ class GameSession(
 ) {
     private val chosen = picks.toMutableList()
     val picks: List<Word> get() = chosen.toList()
-    val isComplete: Boolean get() = chosen.size == template.slots.size
-    val currentSlot: WordSubcategory? get() = template.slots.getOrNull(chosen.size)
+    val isComplete: Boolean get() = chosen.size == template.totalBlanks
+    val currentSlot: WordSubcategory? get() = template.allSlots.getOrNull(chosen.size)
     var pool: List<Word> = pool ?: newPool()
         private set
 
     init {
-        require(chosen.size <= template.slots.size)
-        require(chosen.indices.all { chosen[it].subcategory == template.slots[it] })
+        require(chosen.size <= template.totalBlanks)
+        require(chosen.indices.all { chosen[it].subcategory == template.allSlots[it] })
         require(if (isComplete) this.pool.isEmpty() else
             this.pool.size == WordRepository.POOL_SIZE &&
                 this.pool.distinct().size == WordRepository.POOL_SIZE &&
@@ -25,7 +25,7 @@ class GameSession(
     }
 
     fun choose(word: Word) {
-        check(!isComplete) { "All six blanks are already filled" }
+        check(!isComplete) { "All ${template.totalBlanks} blanks are already filled" }
         require(word in pool) { "Choose from the current pool" }
         chosen.add(word)
         pool = newPool()
