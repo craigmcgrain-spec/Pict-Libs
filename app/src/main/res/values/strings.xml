@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Pict-Libs</string>
+    <string name="app_title">Picture Mad Libs</string>
+    <string name="pick_words_subtitle">Tap one of 12 pictures each round. Six picks make a silly sentence!</string>
+    <string name="round_count">Pick %1$d of 6</string>
+    <string name="round_prompt">%1$s • %2$s</string>
+    <string name="all_words_chosen">6 of 6 words chosen!</string>
+    <string name="story_ready">Your sentence is ready!</string>
+    <string name="undo_pick">Undo last pick</string>
+    <string name="generate_story">Show my sentence!</string>
+    <string name="play_again">Play Again</string>
+    <string name="your_story">Your Crazy Story!</string>
+    <string name="category_adjective">Adjectives</string>
+    <string name="category_noun">Nouns</string>
+    <string name="category_verb">Verbs</string>
+    <string name="try_again">Change last word</string>
+    <string name="read_aloud">Read my sentence</string>
+    <string name="stop_reading">Stop reading</string>
+    <string name="choose_voice">Choose a voice</string>
+    <string name="voice_label">Voice: %1$s</string>
+    <string name="speech_loading">Preparing Piper voices… First use may take a moment.</string>
+    <string name="speech_ready">Ready to read aloud</string>
+    <string name="speech_reading">Creating and reading your sentence with Piper…</string>
+    <string name="speech_unavailable">Could not prepare Piper voices. Check available storage, then tap Reload Piper voices.</string>
+    <string name="speech_error">Piper could not play the sentence. Try again or reload the voices.</string>
+    <string name="speech_settings">Reload Piper voices</string>
+    <string name="device_voices_note">Piper · Lessac High (US) and Cori High (UK) · Offline</string>
+</resources>

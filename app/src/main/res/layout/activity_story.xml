@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_dark"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/your_story"
+            android:textColor="@color/bright_pink"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="24dp" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/WordCard">
+
+            <TextView
+                android:id="@+id/storyText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_primary"
+                android:textSize="20sp"
+                android:lineSpacingExtra="8dp"
+                android:padding="24dp"
+                android:gravity="center" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/speechStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="@string/speech_loading"
+            android:textColor="@color/text_primary"
+            android:textSize="16sp"
+            android:accessibilityLiveRegion="polite" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/voiceButton"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:text="@string/choose_voice"
+            android:textColor="@color/bright_yellow"
+            android:enabled="false"
+            app:strokeColor="@color/bright_yellow"
+            app:cornerRadius="24dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/readAloudButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="56dp"
+            android:text="@string/read_aloud"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:enabled="false"
+            app:backgroundTint="@color/bright_yellow"
+            app:cornerRadius="30dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/speechSettingsButton"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:text="@string/speech_settings"
+            android:textColor="@color/bright_yellow" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/device_voices_note"
+            android:textColor="@color/text_secondary"
+            android:textSize="12sp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/playAgainButton"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="@string/play_again"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:cornerRadius="30dp"
+            app:backgroundTint="@color/bright_green"
+            android:layout_marginTop="24dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/tryAgainButton"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="@string/try_again"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:cornerRadius="30dp"
+            app:backgroundTint="@color/bright_orange"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            app:strokeColor="@color/bright_orange"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="24dp" />
+
+    </LinearLayout>
+
+</ScrollView>
